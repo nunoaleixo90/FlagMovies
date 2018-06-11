@@ -51,12 +51,10 @@ public class SplashScreen extends Screen {
             public void onAnimationRepeat(Animator animation) {
 
             }
-<<<<<<< HEAD
-        }).start();
-=======
-        })
-        .start();
->>>>>>> 097d010953d8ba52735d85c1987b5f24f085b45f
+            }).start();
 
+        }
     }
-}
+
+
+
