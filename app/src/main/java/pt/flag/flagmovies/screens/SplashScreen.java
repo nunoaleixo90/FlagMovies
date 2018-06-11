@@ -22,7 +22,6 @@ public class SplashScreen extends Screen {
 
     }
 
-
     public void findViews(){
         imageView = findViewById(R.id.splash_screen_imageview);
     }
@@ -40,6 +39,7 @@ public class SplashScreen extends Screen {
             @Override
             public void onAnimationEnd(Animator animation) {
                 startActivity(new Intent(SplashScreen.this, HomeScreen.class));
+                finish();
             }
 
             @Override
@@ -51,7 +51,7 @@ public class SplashScreen extends Screen {
             public void onAnimationRepeat(Animator animation) {
 
             }
-        });
+        }).start();
 
     }
 }
