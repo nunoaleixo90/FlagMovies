@@ -1,9 +1,9 @@
-package pt.flag.movieapp.screens;
+package pt.flag.flagmovies.screens;
 
 import android.app.Activity;
 import android.os.Bundle;
 
-import pt.flag.movieapp.utils.DLog;
+import pt.flag.flagmovies.utils.DLog;
 
 public abstract class Screen extends Activity {
 

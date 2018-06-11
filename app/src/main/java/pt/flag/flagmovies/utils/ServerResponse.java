@@ -1,4 +1,4 @@
-package pt.flag.movieapp.utils;
+package pt.flag.flagmovies.utils;
 
 public class ServerResponse<ResponseEntity> {
 

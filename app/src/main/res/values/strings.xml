@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FlagMovies</string>
+    <string name="server_api_key">583ab85f196c508c5932299c1df864ee</string>
+    <string name="server_endpoint">https://api.themoviedb.org/3</string>
 </resources>

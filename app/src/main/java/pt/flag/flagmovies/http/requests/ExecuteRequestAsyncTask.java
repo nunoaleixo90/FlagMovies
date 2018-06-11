@@ -1,15 +1,15 @@
-package pt.flag.movieapp.http.requests;
+package pt.flag.flagmovies.http.requests;
 
 import android.content.Context;
 import android.os.AsyncTask;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import pt.flag.movieapp.R;
-import pt.flag.movieapp.helpers.RequestsHelper;
-import pt.flag.movieapp.utils.DLog;
-import pt.flag.movieapp.utils.ResponseErrors;
-import pt.flag.movieapp.utils.ServerResponse;
+import pt.flag.flagmovies.R;
+import pt.flag.flagmovies.helpers.RequestsHelper;
+import pt.flag.flagmovies.utils.DLog;
+import pt.flag.flagmovies.utils.ResponseErrors;
+import pt.flag.flagmovies.utils.ServerResponse;
 
 public abstract class ExecuteRequestAsyncTask<ResponseEntity> extends AsyncTask<Void, Void, ServerResponse<ResponseEntity>> {
 

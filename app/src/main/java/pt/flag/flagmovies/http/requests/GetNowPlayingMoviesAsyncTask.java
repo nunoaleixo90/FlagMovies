@@ -1,8 +1,8 @@
-package pt.flag.movieapp.http.requests;
+package pt.flag.flagmovies.http.requests;
 
 import android.content.Context;
 
-import pt.flag.movieapp.http.entities.MoviesResponse;
+import pt.flag.flagmovies.http.entities.MoviesResponse;
 
 /**
  * Example for getting now playing movies

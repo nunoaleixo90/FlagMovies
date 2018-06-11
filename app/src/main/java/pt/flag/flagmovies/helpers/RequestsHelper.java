@@ -1,4 +1,4 @@
-package pt.flag.movieapp.helpers;
+package pt.flag.flagmovies.helpers;
 
 import com.google.gson.Gson;
 
@@ -11,7 +11,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
-import pt.flag.movieapp.utils.DLog;
+import pt.flag.flagmovies.utils.DLog;
 
 public final class RequestsHelper {
 

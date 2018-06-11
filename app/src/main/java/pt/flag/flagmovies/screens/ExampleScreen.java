@@ -1,10 +1,10 @@
-package pt.flag.movieapp.screens;
+package pt.flag.flagmovies.screens;
 
 import android.os.Bundle;
 
-import pt.flag.movieapp.http.entities.MoviesResponse;
-import pt.flag.movieapp.http.requests.GetNowPlayingMoviesAsyncTask;
-import pt.flag.movieapp.utils.DLog;
+import pt.flag.flagmovies.http.entities.MoviesResponse;
+import pt.flag.flagmovies.http.requests.GetNowPlayingMoviesAsyncTask;
+import pt.flag.flagmovies.utils.DLog;
 
 public class ExampleScreen extends Screen {
 

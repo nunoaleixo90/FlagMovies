@@ -1,5 +1,5 @@
 
-package pt.flag.movieapp.http.entities;
+package pt.flag.flagmovies.http.entities;
 
 import com.google.gson.annotations.SerializedName;
 

@@ -1,6 +1,6 @@
-package pt.flag.movieapp.utils;
+package pt.flag.flagmovies.utils;
 
-import pt.flag.movieapp.BuildConfig;
+import pt.flag.flagmovies.BuildConfig;
 
 // Use DLog instead of Log to add debug log, so that we could enable/disable logs easily
 public class DLog {
