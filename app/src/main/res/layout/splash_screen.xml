@@ -10,12 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:layout_centerInParent="true"
-<<<<<<< HEAD
-        android:src="@mipmap/app_icon"
-=======
-        android:src="@mipmap/splash_screen_img"
->>>>>>> 33d9329844d171e94ed6d17ff331f24401601adb
-        />
+        android:src="@mipmap/app_icon" />
 
 
 
