@@ -32,7 +32,7 @@ public class SplashScreen extends Screen {
         imageView.setScaleY(0.2f);
         imageView.setAlpha(0.0f);
 
-        imageView.animate().alpha(1f).scaleX(1f).scaleY(1f).rotation(360).setDuration(1500).setListener(new Animator.AnimatorListener() {
+        imageView.animate().alpha(1f).scaleX(1f).scaleY(1f).rotation(360).setDuration(3000).setListener(new Animator.AnimatorListener() {
             @Override
             public void onAnimationStart(Animator animation) {
             }
@@ -40,6 +40,7 @@ public class SplashScreen extends Screen {
             @Override
             public void onAnimationEnd(Animator animation) {
                 startActivity(new Intent(SplashScreen.this, HomeScreen.class));
+                finish();
             }
 
             @Override
@@ -51,7 +52,8 @@ public class SplashScreen extends Screen {
             public void onAnimationRepeat(Animator animation) {
 
             }
-        });
+        })
+        .start();
 
     }
 }
