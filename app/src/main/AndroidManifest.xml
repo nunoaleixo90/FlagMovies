@@ -14,9 +14,7 @@
 
         </activity>
 
-        <activity android:name=".screens.HomeScreen">
-
-        </activity>
+        <activity android:name=".screens.HomeScreen"/>
 
         <activity android:name=".screens.SplashScreen">
             <intent-filter>
