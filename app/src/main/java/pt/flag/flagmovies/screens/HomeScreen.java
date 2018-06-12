@@ -5,6 +5,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 
 import pt.flag.flagmovies.R;
 import pt.flag.flagmovies.adapter.RecycleViewAdapter;
@@ -12,7 +13,7 @@ import pt.flag.flagmovies.adapter.RecycleViewAdapter;
 public class HomeScreen extends Screen {
 
     private EditText searchBar;
-    private Button searchButton;
+    private ImageButton searchButton;
     private RecyclerView recyclerViewInTheaters;
     private LinearLayoutManager recyclerViewInTheatersLM;
     private RecycleViewAdapter recycleViewAdapter;
@@ -31,7 +32,7 @@ public class HomeScreen extends Screen {
 
     public void findViews(){
         searchBar = findViewById(R.id.home_page_edit_text);
-        searchButton=findViewById(R.id.home_page_search_button);
+        searchButton=findViewById(R.id.home_page_image_button);
         recyclerViewInTheaters = findViewById(R.id.recycleview_in_theaters);
 
     }
