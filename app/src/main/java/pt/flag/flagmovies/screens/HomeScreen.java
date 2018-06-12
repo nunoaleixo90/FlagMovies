@@ -18,6 +18,7 @@ import pt.flag.flagmovies.collections.MoviesInTheaters;
 import pt.flag.flagmovies.http.entities.Movie;
 import pt.flag.flagmovies.http.entities.MoviesResponse;
 import pt.flag.flagmovies.http.requests.GetNowPlayingMoviesAsyncTask;
+import pt.flag.flagmovies.utils.ServerResponse;
 
 
 public class HomeScreen extends Screen {
@@ -51,18 +52,34 @@ public class HomeScreen extends Screen {
 
     }
 
-    public  void recycleViewManager(){
+    public  void recycleViewManager() {
         recyclerViewInTheaters.setHasFixedSize(true);
         recyclerViewInTheatersLM = new LinearLayoutManager(this);
         recyclerViewInTheaters.setLayoutManager(recyclerViewInTheatersLM);
+    }
+
+    private void GetMoviesinTheater() {
+        new  MoviesInTheaters(this) {
+
+
+            @Override
+            protected void onResponseSuccess(MoviesResponse moviesResponse) {
+                recycleViewAdapter = new RecycleViewAdapter(moviesResponse.getMovies());
+                recyclerViewInTheaters.setAdapter(recycleViewAdapter);
+                
+            }
 
 
 
+            @Override
+            protected void onNetworkError() {
+                System.out.println("Ola");
+
+            }
+        }.execute();
+    }
 
 
-        recycleViewAdapter = new RecycleViewAdapter();
-
-        recyclerViewInTheaters.setAdapter(recycleViewAdapter);
 
     }
-}
+

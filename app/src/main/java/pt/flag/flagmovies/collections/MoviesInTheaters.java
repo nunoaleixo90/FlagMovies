@@ -2,12 +2,11 @@ package pt.flag.flagmovies.collections;
 
 import android.content.Context;
 
-import pt.flag.flagmovies.http.entities.Movie;
 import pt.flag.flagmovies.http.entities.MoviesResponse;
 import pt.flag.flagmovies.http.requests.ExecuteRequestAsyncTask;
 
 
-public abstract class MoviesInTheaters extends ExecuteRequestAsyncTask {
+public abstract class MoviesInTheaters extends ExecuteRequestAsyncTask<MoviesResponse> {
     private static final String PATH = "/movie/now_playing";
     private static final String LANGUAGE_KEY = "language";
     private static final String LANGUAGE_VALUE = "pt";
@@ -16,7 +15,7 @@ public abstract class MoviesInTheaters extends ExecuteRequestAsyncTask {
     private static final String REGION_KEY = "region";
     private static final String REGION_VALUE ="PT";
 
-    public MoviesInTheaters(Context context) {
+    public  MoviesInTheaters(Context context) {
         super(context);
     }
 
@@ -37,7 +36,7 @@ public abstract class MoviesInTheaters extends ExecuteRequestAsyncTask {
         return MoviesResponse.class;
     }
 
-    
+
 
 
 
