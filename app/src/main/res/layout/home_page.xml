@@ -1,35 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/DimGray">
+    android:background="@color/DimGray"
+    android:orientation="vertical"
 
-    <LinearLayout
+    >
+
+    <RelativeLayout
+        android:id="@+id/search_linear_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/Gainsboro"
-        android:weightSum="4">
+        >
 
         <EditText
             android:id="@+id/home_page_edit_text"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_weight="1"
-            android:text="Search.."/>
+
+            android:hint="Search.." />
+
         <Button
             android:id="@+id/home_page_search_button"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="3"
-            android:text="GO"/>
-    </LinearLayout>
-
-
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/home_page_edit_text"
+            android:text="GO" />
+    </RelativeLayout>
     <TextView
-        android:text="Home Screen"
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
+        android:id="@+id/title_in_theaters"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/Gainsboro"/>
+        android:text="In Theaters"/>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleview_in_theaters"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="horizontal"
+        />
 
-</RelativeLayout>
+</LinearLayout>
