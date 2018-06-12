@@ -9,6 +9,7 @@ import android.widget.ImageButton;
 
 import pt.flag.flagmovies.R;
 import pt.flag.flagmovies.adapter.RecycleViewAdapter;
+import pt.flag.flagmovies.http.entities.Movie;
 
 public class HomeScreen extends Screen {
 
@@ -47,7 +48,8 @@ public class HomeScreen extends Screen {
         recyclerViewInTheaters.setLayoutManager(recyclerViewInTheatersLM);
 
 
-        
+
+
         recycleViewAdapter = new RecycleViewAdapter();
         recyclerViewInTheaters.setAdapter(recycleViewAdapter);
 
