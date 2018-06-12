@@ -6,8 +6,14 @@ import android.support.v7.widget.RecyclerView;
 import android.widget.Button;
 import android.widget.EditText;
 
+import java.util.List;
+
 import pt.flag.flagmovies.R;
 import pt.flag.flagmovies.adapter.RecycleViewAdapter;
+import pt.flag.flagmovies.collections.MoviesInTheaters;
+import pt.flag.flagmovies.http.entities.Movie;
+import pt.flag.flagmovies.http.entities.MoviesResponse;
+import pt.flag.flagmovies.http.requests.GetNowPlayingMoviesAsyncTask;
 
 public class HomeScreen extends Screen {
 
@@ -40,14 +46,15 @@ public class HomeScreen extends Screen {
 
     }
 
-    public void recycleViewManager(){
+    public  void recycleViewManager(){
         recyclerViewInTheaters.setHasFixedSize(true);
         recyclerViewInTheatersLM = new LinearLayoutManager(this);
         recyclerViewInTheaters.setLayoutManager(recyclerViewInTheatersLM);
 
 
-        
-        recycleViewAdapter = new RecycleViewAdapter();
+
+
+        recycleViewAdapter = new RecycleViewAdapter(GetNowPlayingMoviesAsyncTask.execute(););
         recyclerViewInTheaters.setAdapter(recycleViewAdapter);
 
     }

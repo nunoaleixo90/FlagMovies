@@ -13,8 +13,10 @@ import pt.flag.flagmovies.utils.ServerResponse;
 
 public abstract class ExecuteRequestAsyncTask<ResponseEntity> extends AsyncTask<Void, Void, ServerResponse<ResponseEntity>> {
 
-    private static final String API_KEY = "api_key";
+    private static final String API_KEY = "583ab85f196c508c5932299c1df864ee";
     private static final String TAG = ExecuteRequestAsyncTask.class.getSimpleName();
+
+
 
     private Context context;
 
@@ -99,6 +101,8 @@ public abstract class ExecuteRequestAsyncTask<ResponseEntity> extends AsyncTask<
         }
 
     }
+
+
 
     private String buildUrl() {
         String apiKey = context.getString(R.string.server_api_key);
