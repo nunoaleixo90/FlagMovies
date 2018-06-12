@@ -37,6 +37,7 @@ public class HomeScreen extends Screen {
         findViews();
         setListeners();
         recycleViewManager();
+        GetMoviesinTheater();
 
     }
 
@@ -59,14 +60,15 @@ public class HomeScreen extends Screen {
     }
 
     private void GetMoviesinTheater() {
-        new  MoviesInTheaters(this) {
+        new  GetNowPlayingMoviesAsyncTask(this) {
 
 
             @Override
             protected void onResponseSuccess(MoviesResponse moviesResponse) {
                 recycleViewAdapter = new RecycleViewAdapter(moviesResponse.getMovies());
                 recyclerViewInTheaters.setAdapter(recycleViewAdapter);
-                
+
+
             }
 
 

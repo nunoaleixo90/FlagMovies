@@ -1,16 +1,26 @@
 package pt.flag.flagmovies.adapter;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.List;
 
 import pt.flag.flagmovies.R;
 import pt.flag.flagmovies.http.entities.Movie;
+
+import static android.content.ContentValues.TAG;
 
 public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.ViewHolder> {
 
@@ -34,7 +44,11 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
         Movie filme = movieList.get(position);
 
         holder.viewNome.setText(filme.getOriginalTitle());
+
+
     }
+
+
 
     @Override
     public int getItemCount() {
@@ -45,9 +59,11 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
     protected class ViewHolder extends RecyclerView.ViewHolder{
         private TextView viewNome;
 
+
         public ViewHolder(final View itemView){
             super(itemView);
             viewNome =itemView.findViewById(R.id.title_movie_in_theater);
+
 
 
 
