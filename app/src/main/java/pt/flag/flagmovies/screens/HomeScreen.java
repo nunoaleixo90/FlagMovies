@@ -3,22 +3,18 @@ package pt.flag.flagmovies.screens;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-import java.util.List;
-
 import pt.flag.flagmovies.R;
-import pt.flag.flagmovies.adapter.RecycleViewAdapter;
+import pt.flag.flagmovies.adapter.RecycleViewAdapterMoviesInTheaters;
 
-import pt.flag.flagmovies.http.entities.Movie;
+import pt.flag.flagmovies.adapter.RecycleViewAdapterTvOnAir;
+import pt.flag.flagmovies.collections.TVOnAir;
 
 import pt.flag.flagmovies.collections.MoviesInTheaters;
-import pt.flag.flagmovies.http.entities.Movie;
 import pt.flag.flagmovies.http.entities.MoviesResponse;
-import pt.flag.flagmovies.http.requests.GetNowPlayingMoviesAsyncTask;
-import pt.flag.flagmovies.utils.ServerResponse;
+import pt.flag.flagmovies.http.entities.TvResponse;
 
 
 public class HomeScreen extends Screen {
@@ -27,7 +23,10 @@ public class HomeScreen extends Screen {
     private ImageButton searchButton;
     private RecyclerView recyclerViewInTheaters;
     private LinearLayoutManager recyclerViewInTheatersLM;
-    private RecycleViewAdapter recycleViewAdapter;
+    private RecycleViewAdapterMoviesInTheaters recycleViewAdapter;
+    private RecyclerView recyclerViewOnair;
+    private LinearLayoutManager recyclerViewOnairLM;
+    private RecycleViewAdapterTvOnAir recycleViewAdapterTvOnAir;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +37,7 @@ public class HomeScreen extends Screen {
         setListeners();
         recycleViewManager();
         GetMoviesinTheater();
+        GetTvonAir();
 
     }
 
@@ -46,6 +46,9 @@ public class HomeScreen extends Screen {
         searchBar = findViewById(R.id.home_page_edit_text);
         searchButton=findViewById(R.id.home_page_image_button);
         recyclerViewInTheaters = findViewById(R.id.recycleview_in_theaters);
+        recyclerViewOnair = findViewById(R.id.recycleview_in_tv);
+
+
 
     }
 
@@ -57,16 +60,42 @@ public class HomeScreen extends Screen {
         recyclerViewInTheaters.setHasFixedSize(true);
         recyclerViewInTheatersLM = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         recyclerViewInTheaters.setLayoutManager(recyclerViewInTheatersLM);
+
+        recyclerViewOnair.setHasFixedSize(true);
+        recyclerViewOnairLM = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        recyclerViewOnair.setLayoutManager(recyclerViewOnairLM);
     }
 
     private void GetMoviesinTheater() {
-        new  GetNowPlayingMoviesAsyncTask(this) {
+        new  MoviesInTheaters(this) {
 
 
             @Override
             protected void onResponseSuccess(MoviesResponse moviesResponse) {
-                recycleViewAdapter = new RecycleViewAdapter(moviesResponse.getMovies());
+                recycleViewAdapter = new RecycleViewAdapterMoviesInTheaters(moviesResponse.getMovies());
                 recyclerViewInTheaters.setAdapter(recycleViewAdapter);
+
+
+            }
+
+
+
+            @Override
+            protected void onNetworkError() {
+                System.out.println("Ola");
+
+            }
+        }.execute();
+    }
+
+    private void GetTvonAir() {
+        new TVOnAir(this) {
+
+
+            @Override
+            protected void onResponseSuccess(TvResponse tvResponse) {
+                recycleViewAdapterTvOnAir = new RecycleViewAdapterTvOnAir(tvResponse.getTvshows());
+                recyclerViewOnair.setAdapter(recycleViewAdapterTvOnAir);
 
 
             }

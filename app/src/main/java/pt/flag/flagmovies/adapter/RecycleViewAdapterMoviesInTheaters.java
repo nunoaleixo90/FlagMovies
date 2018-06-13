@@ -17,18 +17,18 @@ import java.util.List;
 import pt.flag.flagmovies.R;
 import pt.flag.flagmovies.http.entities.Movie;
 
-public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.ViewHolder> {
+public class RecycleViewAdapterMoviesInTheaters extends RecyclerView.Adapter<RecycleViewAdapterMoviesInTheaters.ViewHolder> {
 
     private List<Movie> movieList;
 
 
-    public RecycleViewAdapter(List<Movie> movieList) {
+    public RecycleViewAdapterMoviesInTheaters(List<Movie> movieList) {
         this.movieList = movieList;
     }
 
 
     @Override
-    public RecycleViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public RecycleViewAdapterMoviesInTheaters.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_movie_in_theater, parent, false);
 
         return new ViewHolder(itemView);
