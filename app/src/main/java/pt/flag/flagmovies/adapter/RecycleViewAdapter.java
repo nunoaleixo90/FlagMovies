@@ -1,26 +1,21 @@
 package pt.flag.flagmovies.adapter;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.support.annotation.NonNull;
+
+
+
 import android.support.v7.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.InputStream;
-import java.net.URL;
+
 import java.util.List;
 
 import pt.flag.flagmovies.R;
 import pt.flag.flagmovies.http.entities.Movie;
-
-import static android.content.ContentValues.TAG;
 
 public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.ViewHolder> {
 
@@ -31,19 +26,21 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
         this.movieList = movieList;
     }
 
-    @NonNull
+
     @Override
-    public RecycleViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView= LayoutInflater.from(parent.getContext()).inflate(R.layout.recycle_view_item_movies_in_theater, parent, false);
+    public RecycleViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View itemView= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_movie_in_theater, parent, false);
 
         return new ViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecycleViewAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, int position) {
         Movie filme = movieList.get(position);
 
-        holder.viewNome.setText(filme.getOriginalTitle());
+        holder.in_theater_title.setText(filme.getTitle());
+
+
 
 
     }
@@ -57,12 +54,14 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
 
 
     protected class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView viewNome;
+        private TextView in_theater_title;
+        private ImageView in_theater_poster;
 
 
         public ViewHolder(final View itemView){
             super(itemView);
-            viewNome =itemView.findViewById(R.id.title_movie_in_theater);
+            in_theater_title =(TextView) itemView.findViewById(R.id.title_movie_in_theater);
+            in_theater_poster = (ImageView) itemView.findViewById(R.id.poster_movie_in_theater);
 
 
 

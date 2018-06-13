@@ -1,12 +1,15 @@
 
 package pt.flag.flagmovies.http.entities;
 
+
+
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class Movie {
+
+    private String posterURL;
 
     @SerializedName("poster_path")
     private String posterPath;
@@ -77,4 +80,18 @@ public class Movie {
     public Double getVoteAverage() {
         return voteAverage;
     }
+
+    public void setPosterURL(String path) {
+        this.posterURL = " http://image.tmdb.org/t/p/w185/" + getPosterPath();
+    }
+
+    public String getPosterURL() {
+        return posterURL;
+    }
+
+
+
+
+
+
 }

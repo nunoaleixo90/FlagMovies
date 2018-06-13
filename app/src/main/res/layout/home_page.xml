@@ -37,7 +37,7 @@
         android:id="@+id/recycleview_in_theaters"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:scrollbars="horizontal"
+
         />
 
 </LinearLayout>

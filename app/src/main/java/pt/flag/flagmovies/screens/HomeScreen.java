@@ -55,7 +55,7 @@ public class HomeScreen extends Screen {
 
     public  void recycleViewManager() {
         recyclerViewInTheaters.setHasFixedSize(true);
-        recyclerViewInTheatersLM = new LinearLayoutManager(this);
+        recyclerViewInTheatersLM = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         recyclerViewInTheaters.setLayoutManager(recyclerViewInTheatersLM);
     }
 
