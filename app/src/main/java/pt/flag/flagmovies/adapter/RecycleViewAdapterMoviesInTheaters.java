@@ -3,6 +3,8 @@ package pt.flag.flagmovies.adapter;
 
 
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -12,6 +14,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.util.List;
 
 import pt.flag.flagmovies.R;
@@ -43,6 +48,10 @@ public class RecycleViewAdapterMoviesInTheaters extends RecyclerView.Adapter<Rec
 
 
 
+
+
+
+
     }
 
 
@@ -69,4 +78,6 @@ public class RecycleViewAdapterMoviesInTheaters extends RecyclerView.Adapter<Rec
         }
 
     }
+
+
 }
