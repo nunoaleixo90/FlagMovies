@@ -9,7 +9,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Movie {
 
-    private String posterURL;
+
 
     @SerializedName("poster_path")
     private String posterPath;
@@ -81,12 +81,10 @@ public class Movie {
         return voteAverage;
     }
 
-    public void setPosterURL(String path) {
-        this.posterURL = " http://image.tmdb.org/t/p/w185/" + getPosterPath();
-    }
+
 
     public String getPosterURL() {
-        return posterURL;
+        return "http://image.tmdb.org/t/p/w185/" + getPosterPath();
     }
 
 

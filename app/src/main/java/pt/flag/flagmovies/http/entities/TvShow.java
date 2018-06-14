@@ -4,7 +4,7 @@ package pt.flag.flagmovies.http.entities;
 import com.google.gson.annotations.SerializedName;
 
 public class TvShow {
-    private String posterURL;
+
 
     @SerializedName("poster_path")
     private String posterPath;
@@ -76,11 +76,10 @@ public class TvShow {
         return voteAverage;
     }
 
-    public void setPosterURL(String path) {
-        this.posterURL = " http://image.tmdb.org/t/p/w185/" + getPosterPath();
-    }
+
 
     public String getPosterURL() {
-        return posterURL;
+
+        return "http://image.tmdb.org/t/p/w185/" + getPosterPath();
     }
 }

@@ -3,8 +3,7 @@ package pt.flag.flagmovies.adapter;
 
 
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+
 import android.support.v7.widget.RecyclerView;
 
 import android.view.LayoutInflater;
@@ -14,9 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 import pt.flag.flagmovies.R;
@@ -43,8 +41,15 @@ public class RecycleViewAdapterMoviesInTheaters extends RecyclerView.Adapter<Rec
     public void onBindViewHolder(ViewHolder holder, int position) {
         Movie filme = movieList.get(position);
 
-        holder.in_theater_title.setText(filme.getTitle());
+        holder.in_theater_title.setText(filme.getOriginalTitle());
 
+        try
+        {
+            System.out.println("O url é" + filme.getPosterURL());
+            Picasso.get().load(filme.getPosterURL()).into(holder.in_theater_poster);
+        }catch (Exception e){
+            System.out.println("ERROOOOOOO");
+        }
 
 
 

@@ -1,11 +1,15 @@
 package pt.flag.flagmovies.adapter;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -34,7 +38,20 @@ public class RecycleViewAdapterTvOnAir extends RecyclerView.Adapter<RecycleViewA
     public void onBindViewHolder(RecycleViewAdapterTvOnAir.ViewHolder holder, int position) {
         TvShow tvshow = tvshowList.get(position);
 
-        holder.title_tv_on_air.setText(tvshow.getTitle());
+        holder.title_tv_on_air.setText(tvshow.getOriginalTitle());
+
+        try
+        {
+            if(!tvshow.getPosterURL().equals("null")) {
+                Picasso.get().load(tvshow.getPosterURL()).into(holder.poster_tv_on_air);
+            }
+            else if(tvshow.getPosterURL().equals("null")){
+                Bitmap bitmap = BitmapFactory.decodeFile("mipmap-hdpi/app_icon.png");
+                holder.poster_tv_on_air.setImageBitmap(bitmap);
+            }
+        }catch (Exception e){
+            System.out.println("ERROOOOOOO");
+        }
 
 
 
