@@ -72,7 +72,7 @@ public class HomeScreen extends Screen {
 
             @Override
             protected void onResponseSuccess(MoviesResponse moviesResponse) {
-                recycleViewAdapter = new RecycleViewAdapterMoviesInTheaters(moviesResponse.getMovies());
+                recycleViewAdapter = new RecycleViewAdapterMoviesInTheaters(HomeScreen.this,moviesResponse.getMovies());
                 recyclerViewInTheaters.setAdapter(recycleViewAdapter);
 
 

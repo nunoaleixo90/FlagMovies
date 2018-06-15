@@ -28,6 +28,9 @@
         <activity android:name=".screens.SearchScreenResults">
 
         </activity>
+        <activity android:name=".screens.MovieDetail">
+
+        </activity>
     </application>
 
 </manifest>
