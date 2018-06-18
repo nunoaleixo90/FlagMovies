@@ -7,6 +7,7 @@ import com.google.gson.annotations.SerializedName;
 
 
 
+
 public class Movie {
 
 
@@ -40,6 +41,9 @@ public class Movie {
 
     @SerializedName("vote_average")
     private Double voteAverage;
+
+    @SerializedName("id")
+    private Integer movieid;
 
     public String getPosterPath() {
         return posterPath;
@@ -82,6 +86,10 @@ public class Movie {
     }
 
 
+
+    public Integer getMovieid() {
+        return movieid;
+    }
 
     public String getPosterURL() {
         return "http://image.tmdb.org/t/p/w185/" + getPosterPath();

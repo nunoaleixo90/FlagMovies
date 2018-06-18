@@ -31,6 +31,10 @@
         <activity android:name=".screens.MovieDetail">
 
         </activity>
+
+        <activity android:name=".screens.TvDetail">
+
+        </activity>
     </application>
 
 </manifest>

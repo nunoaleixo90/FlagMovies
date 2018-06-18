@@ -3,6 +3,7 @@ package pt.flag.flagmovies.screens;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
@@ -54,6 +55,7 @@ public class HomeScreen extends Screen {
 
     public void setListeners(){
 
+
     }
 
     public  void recycleViewManager() {
@@ -94,7 +96,7 @@ public class HomeScreen extends Screen {
 
             @Override
             protected void onResponseSuccess(TvResponse tvResponse) {
-                recycleViewAdapterTvOnAir = new RecycleViewAdapterTvOnAir(tvResponse.getTvshows());
+                recycleViewAdapterTvOnAir = new RecycleViewAdapterTvOnAir(HomeScreen.this, tvResponse.getTvshows());
                 recyclerViewOnair.setAdapter(recycleViewAdapterTvOnAir);
 
 
@@ -109,6 +111,8 @@ public class HomeScreen extends Screen {
             }
         }.execute();
     }
+
+
 
 
 

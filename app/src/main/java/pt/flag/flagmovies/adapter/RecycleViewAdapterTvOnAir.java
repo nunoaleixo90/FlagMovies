@@ -1,7 +1,10 @@
 package pt.flag.flagmovies.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,14 +19,18 @@ import java.util.List;
 import pt.flag.flagmovies.R;
 import pt.flag.flagmovies.http.entities.Movie;
 import pt.flag.flagmovies.http.entities.TvShow;
+import pt.flag.flagmovies.screens.TvDetail;
 
 public class RecycleViewAdapterTvOnAir extends RecyclerView.Adapter<RecycleViewAdapterTvOnAir.ViewHolder> {
 
     private List<TvShow> tvshowList;
+    private Context context;
 
 
-    public RecycleViewAdapterTvOnAir(List<TvShow> tvshowList) {
+    public RecycleViewAdapterTvOnAir(Context context, List<TvShow> tvshowList) {
+
         this.tvshowList = tvshowList;
+        this.context=context;
     }
 
 
@@ -35,7 +42,7 @@ public class RecycleViewAdapterTvOnAir extends RecyclerView.Adapter<RecycleViewA
     }
 
     @Override
-    public void onBindViewHolder(RecycleViewAdapterTvOnAir.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecycleViewAdapterTvOnAir.ViewHolder holder,final int position) {
         TvShow tvshow = tvshowList.get(position);
 
         holder.title_tv_on_air.setText(tvshow.getOriginalTitle());
@@ -53,6 +60,22 @@ public class RecycleViewAdapterTvOnAir extends RecyclerView.Adapter<RecycleViewA
             System.out.println("ERROOOOOOO");
         }
 
+        holder.cardView_item_tv_on_air.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(context, TvDetail.class);
+                intent.putExtra("TvShow Title", tvshowList.get(position).getOriginalTitle());
+                intent.putExtra("TvShow Poster", tvshowList.get(position).getPosterURL());
+                intent.putExtra("Description",tvshowList.get(position).getOverview() );
+
+                context.startActivity(intent);
+
+            }
+
+        });
+
 
 
 
@@ -69,12 +92,16 @@ public class RecycleViewAdapterTvOnAir extends RecyclerView.Adapter<RecycleViewA
     protected class ViewHolder extends RecyclerView.ViewHolder{
         private TextView title_tv_on_air;
         private ImageView poster_tv_on_air;
+        private CardView cardView_item_tv_on_air;
+        private ImageView tv_detail_poster;
 
 
         public ViewHolder(final View itemView){
             super(itemView);
             title_tv_on_air =(TextView) itemView.findViewById(R.id.title_tv_on_air);
             poster_tv_on_air = (ImageView) itemView.findViewById(R.id.poster_tv_on_air);
+            cardView_item_tv_on_air = (CardView) itemView.findViewById(R.id.cardview_item_tv_on_air);
+            tv_detail_poster = (ImageView) itemView.findViewById(R.id.tv_detail_poster);
 
 
 
