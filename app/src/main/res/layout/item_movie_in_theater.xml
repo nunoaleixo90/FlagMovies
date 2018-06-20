@@ -5,7 +5,8 @@
     android:layout_margin="5dp"
     android:clickable="true"
     android:foreground="?android:attr/selectableItemBackground"
-    android:id="@+id/cardview_item_movie_on_air">
+    android:id="@+id/cardview_item_movie_on_air"
+    >
 
 
     <LinearLayout
