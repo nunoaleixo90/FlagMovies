@@ -11,7 +11,7 @@ public abstract class TVOnAir extends ExecuteRequestAsyncTask<TvResponse> {
     private static final String LANGUAGE_KEY = "language";
     private static final String LANGUAGE_VALUE = "pt";
     private static final String PAGE_KEY = "page";
-    private static final String PAGE_VALUE = "1";
+    private static final String PAGE_VALUE = "2";
 
 
     public  TVOnAir(Context context) {

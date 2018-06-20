@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.SearchView;
 
+
 import pt.flag.flagmovies.R;
 import pt.flag.flagmovies.adapter.RecycleViewAdapterMoviesInTheaters;
 
