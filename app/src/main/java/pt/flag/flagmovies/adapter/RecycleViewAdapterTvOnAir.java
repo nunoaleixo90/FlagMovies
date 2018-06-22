@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -46,6 +47,7 @@ public class RecycleViewAdapterTvOnAir extends RecyclerView.Adapter<RecycleViewA
         TvShow tvshow = tvshowList.get(position);
 
         holder.title_tv_on_air.setText(tvshow.getOriginalTitle());
+        holder.title_tv_on_air.setTypeface(Typeface.createFromAsset(context.getAssets(), "fonts/fff_tusj.ttf"));
 
         try
         {
