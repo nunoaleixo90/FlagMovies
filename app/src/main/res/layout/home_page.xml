@@ -39,6 +39,7 @@
         android:id="@+id/title_in_theaters"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/Gainsboro"
         android:text="In Theaters"
         android:gravity="center"
         android:textSize="24sp"/>
@@ -53,6 +54,7 @@
         android:id="@+id/title_in_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/Gainsboro"
         android:text="Tv on the air"
         android:gravity="center"
         android:textSize="24sp"/>
