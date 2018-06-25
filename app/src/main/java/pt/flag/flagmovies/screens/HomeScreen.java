@@ -33,6 +33,7 @@ public class HomeScreen extends Screen {
     private RecyclerView recyclerViewOnair;
     private LinearLayoutManager recyclerViewOnairLM;
     private RecycleViewAdapterTvOnAir recycleViewAdapterTvOnAir;
+    private String searchQuery;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +65,10 @@ public class HomeScreen extends Screen {
 
 
 
+    }
 
+    public String getSearchQuery() {
+        return searchQuery;
     }
 
     public  void recycleViewManager() {
