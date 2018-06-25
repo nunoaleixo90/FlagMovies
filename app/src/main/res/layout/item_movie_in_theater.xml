@@ -22,7 +22,7 @@
         <TextView
             android:id="@+id/title_movie_in_theater"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:gravity="center"
             android:text="Title"
 
@@ -37,8 +37,15 @@
             />
 
         <RatingBar
+            android:id="@+id/rating_movie_in_theater"
+            style="?android:attr/ratingBarStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:elevation="10dp"
+            android:stepSize="1.0"
+            android:numStars="5"
             />
 
 
